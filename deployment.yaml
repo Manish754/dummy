@@ -20,7 +20,7 @@ spec:
       containers:
         - image: 235501828783.dkr.ecr.us-east-2.amazonaws.com/dummy:latest
           imagePullPolicy: Always
-          name: dummy
+          name: cicd-demo
           ports:
             - containerPort: 3000
  

@@ -2,11 +2,14 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def home():
-    return {'msg': 'Hi this is manish '}
+    return '<h1>Welcome to my website!</h1>'
 
+@app.route('/about')
+def about():
+    return '<h2>About Page</h2><p>This is a simple website created with Python and Flask.</p>'
 
-if _name_ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    app.run(debug=True)
+

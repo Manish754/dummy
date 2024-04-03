@@ -1,10 +1,8 @@
-FROM python:3.8-slim-buster
-
-WORKDIR /app
-
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-
+FROM node:14
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+RUN npm install express
 COPY . .
-
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+EXPOSE 3000
+CMD [ "node", "server.js" ]
